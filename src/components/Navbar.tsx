@@ -44,6 +44,9 @@ const Navbar = () => {
           >
             <Link to="/" className="flex items-center space-x-2">
               <img src={logo} alt="Paragon Logo" className="h-10 w-auto" />
+              <span className="font-orbitron font-bold text-xl text-black">
+                Paragon Tech
+              </span>
             </Link>
           </motion.div>
 
