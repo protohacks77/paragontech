@@ -52,7 +52,7 @@ const About = () => {
             <h1 className="font-orbitron text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-white via-cyber-purple to-cyber-blue bg-clip-text text-transparent">
               About Us
             </h1>
-            <p className="text-xl md:text-2xl text-white/70 max-w-4xl mx-auto leading-relaxed">
+            <p className="text-xl md:text-2xl text-black/70 max-w-4xl mx-auto leading-relaxed">
               We are a forward-thinking technology company dedicated to creating exceptional digital experiences 
               that push the boundaries of what's possible in the modern web.
             </p>
@@ -61,7 +61,7 @@ const About = () => {
       </section>
 
       {/* Mission Section */}
-      <section className="py-20 px-4 bg-black/20">
+      <section className="py-20 px-4 bg-white/20">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ y: 30, opacity: 0 }}
@@ -69,7 +69,7 @@ const About = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="font-orbitron text-4xl md:text-5xl font-bold mb-6 text-white">
+            <h2 className="font-orbitron text-4xl md:text-5xl font-bold mb-6 text-black">
               Our <span className="bg-gradient-to-r from-cyber-purple to-cyber-blue bg-clip-text text-transparent">Mission</span>
             </h2>
           </motion.div>
@@ -81,15 +81,15 @@ const About = () => {
               viewport={{ once: true }}
             >
               <GlassCard className="p-8">
-                <h3 className="font-orbitron text-2xl font-bold mb-6 text-white">
+                <h3 className="font-orbitron text-2xl font-bold mb-6 text-black">
                   Transforming Ideas into Digital Reality
                 </h3>
-                <p className="text-white/70 text-lg leading-relaxed mb-6">
+                <p className="text-black/70 text-lg leading-relaxed mb-6">
                   At Paragon Tech Solutions, we believe that technology should be an enabler, not a barrier. 
                   Our mission is to bridge the gap between innovative ideas and practical digital solutions 
                   that make a real impact.
                 </p>
-                <p className="text-white/70 text-lg leading-relaxed">
+                <p className="text-black/70 text-lg leading-relaxed">
                   We specialize in creating web platforms, educational systems, and creative media solutions 
                   that not only meet current needs but anticipate future requirements.
                 </p>
@@ -114,10 +114,10 @@ const About = () => {
                     <div className="text-cyber-purple mb-4 flex justify-center">
                       {value.icon}
                     </div>
-                    <h4 className="font-orbitron font-bold text-white mb-2">
+                    <h4 className="font-orbitron font-bold text-black mb-2">
                       {value.title}
                     </h4>
-                    <p className="text-white/60 text-sm">
+                    <p className="text-black/60 text-sm">
                       {value.description}
                     </p>
                   </GlassCard>
@@ -137,7 +137,7 @@ const About = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="font-orbitron text-4xl md:text-5xl font-bold mb-6 text-white">
+            <h2 className="font-orbitron text-4xl md:text-5xl font-bold mb-6 text-black">
               Our <span className="bg-gradient-to-r from-cyber-purple to-cyber-blue bg-clip-text text-transparent">Journey</span>
             </h2>
           </motion.div>
@@ -162,17 +162,17 @@ const About = () => {
                       <div className="w-12 h-12 bg-gradient-to-r from-cyber-purple to-cyber-blue rounded-full flex items-center justify-center font-orbitron font-bold text-white">
                         {milestone.year.slice(-2)}
                       </div>
-                      <h3 className="font-orbitron text-xl font-bold text-white ml-4">
+                      <h3 className="font-orbitron text-xl font-bold text-black ml-4">
                         {milestone.title}
                       </h3>
                     </div>
-                    <p className="text-white/70">
+                    <p className="text-black/70">
                       {milestone.description}
                     </p>
                   </GlassCard>
                 </div>
                 
-                <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-cyber-purple rounded-full border-4 border-dark-900"></div>
+                <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-cyber-purple rounded-full border-4 border-light-900"></div>
               </motion.div>
             ))}
           </div>
@@ -180,7 +180,7 @@ const About = () => {
       </section>
 
       {/* Stats Section */}
-      <section className="py-20 px-4 bg-black/20">
+      <section className="py-20 px-4 bg-white/20">
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-4 gap-8 text-center">
             {[
@@ -200,7 +200,7 @@ const About = () => {
                   <h3 className="font-orbitron text-4xl font-bold text-cyber-purple mb-2">
                     {stat.number}
                   </h3>
-                  <p className="text-white/70">
+                  <p className="text-black/70">
                     {stat.label}
                   </p>
                 </GlassCard>

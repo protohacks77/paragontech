@@ -91,7 +91,7 @@ const Blog = () => {
             <h1 className="font-orbitron text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-white via-cyber-purple to-cyber-blue bg-clip-text text-transparent">
               Tech Insights
             </h1>
-            <p className="text-xl md:text-2xl text-white/70 max-w-4xl mx-auto leading-relaxed">
+            <p className="text-xl md:text-2xl text-black/70 max-w-4xl mx-auto leading-relaxed">
               Stay updated with the latest trends, insights, and best practices in technology, development, and digital innovation
             </p>
           </motion.div>
@@ -103,13 +103,13 @@ const Blog = () => {
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-col md:flex-row gap-4 justify-between items-center">
             <div className="relative flex-1 max-w-md">
-              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-white/50 w-5 h-5" />
+              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-black/50 w-5 h-5" />
               <input
                 type="text"
                 placeholder="Search articles..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full pl-10 pr-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/50 focus:outline-none focus:border-cyber-purple transition-colors"
+                className="w-full pl-10 pr-4 py-3 bg-black/10 border border-black/20 rounded-lg text-black placeholder-black/50 focus:outline-none focus:border-cyber-purple transition-colors"
               />
             </div>
             <div className="flex flex-wrap gap-2">
@@ -122,7 +122,7 @@ const Blog = () => {
                   className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
                     selectedCategory === category
                       ? 'bg-gradient-to-r from-cyber-purple to-cyber-blue text-white'
-                      : 'bg-white/10 text-white/70 hover:bg-white/20 hover:text-white'
+                      : 'bg-black/10 text-black/70 hover:bg-black/20 hover:text-black'
                   }`}
                 >
                   {category}
@@ -161,7 +161,7 @@ const Blog = () => {
                     </div>
 
                     <div className="p-6">
-                      <div className="flex items-center space-x-4 mb-3 text-white/60 text-sm">
+                      <div className="flex items-center space-x-4 mb-3 text-black/60 text-sm">
                         <div className="flex items-center space-x-1">
                           <Calendar className="w-4 h-4" />
                           <span>{new Date(post.date).toLocaleDateString()}</span>
@@ -172,11 +172,11 @@ const Blog = () => {
                         </div>
                       </div>
 
-                      <h2 className="font-orbitron text-xl font-bold text-white mb-3 line-clamp-2 group-hover:text-cyber-purple transition-colors">
+                      <h2 className="font-orbitron text-xl font-bold text-black mb-3 line-clamp-2 group-hover:text-cyber-purple transition-colors">
                         {post.title}
                       </h2>
 
-                      <p className="text-white/70 text-sm mb-4 leading-relaxed line-clamp-3">
+                      <p className="text-black/70 text-sm mb-4 leading-relaxed line-clamp-3">
                         {post.excerpt}
                       </p>
 
@@ -204,11 +204,11 @@ const Blog = () => {
               className="text-center py-20"
             >
               <GlassCard className="p-12 max-w-md mx-auto">
-                <Search className="w-16 h-16 text-white/30 mx-auto mb-4" />
-                <h3 className="font-orbitron text-xl font-bold text-white mb-2">
+                <Search className="w-16 h-16 text-black/30 mx-auto mb-4" />
+                <h3 className="font-orbitron text-xl font-bold text-black mb-2">
                   No Articles Found
                 </h3>
-                <p className="text-white/60">
+                <p className="text-black/60">
                   Try adjusting your search terms or browse all categories.
                 </p>
               </GlassCard>
@@ -218,7 +218,7 @@ const Blog = () => {
       </section>
 
       {/* Newsletter Section */}
-      <section className="py-20 px-4 bg-black/20">
+      <section className="py-20 px-4 bg-white/20">
         <div className="max-w-4xl mx-auto text-center">
           <motion.div
             initial={{ y: 30, opacity: 0 }}
@@ -226,17 +226,17 @@ const Blog = () => {
             viewport={{ once: true }}
           >
             <GlassCard className="p-12">
-              <h2 className="font-orbitron text-3xl md:text-4xl font-bold mb-6 text-white">
+              <h2 className="font-orbitron text-3xl md:text-4xl font-bold mb-6 text-black">
                 Stay Updated
               </h2>
-              <p className="text-xl text-white/70 mb-8 max-w-2xl mx-auto">
+              <p className="text-xl text-black/70 mb-8 max-w-2xl mx-auto">
                 Subscribe to our newsletter and never miss our latest insights on technology and innovation.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
                 <input
                   type="email"
                   placeholder="Enter your email"
-                  className="flex-1 px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/50 focus:outline-none focus:border-cyber-purple transition-colors"
+                  className="flex-1 px-4 py-3 bg-black/10 border border-black/20 rounded-lg text-black placeholder-black/50 focus:outline-none focus:border-cyber-purple transition-colors"
                 />
                 <motion.button
                   whileHover={{ scale: 1.05 }}

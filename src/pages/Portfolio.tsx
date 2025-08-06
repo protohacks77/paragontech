@@ -96,7 +96,7 @@ const Portfolio = () => {
             <h1 className="font-orbitron text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-white via-cyber-purple to-cyber-blue bg-clip-text text-transparent">
               Portfolio
             </h1>
-            <p className="text-xl md:text-2xl text-white/70 max-w-4xl mx-auto leading-relaxed">
+            <p className="text-xl md:text-2xl text-black/70 max-w-4xl mx-auto leading-relaxed">
               Explore our collection of innovative projects that showcase our expertise across various industries and technologies
             </p>
           </motion.div>
@@ -116,7 +116,7 @@ const Portfolio = () => {
                 className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${
                   activeFilter === category
                     ? 'bg-gradient-to-r from-cyber-purple to-cyber-blue text-white'
-                    : 'bg-white/10 text-white/70 hover:bg-white/20 hover:text-white'
+                    : 'bg-black/10 text-black/70 hover:bg-black/20 hover:text-black'
                 }`}
               >
                 {category}
@@ -173,21 +173,21 @@ const Portfolio = () => {
                         <Star className="w-4 h-4 text-yellow-500" />
                       </div>
 
-                      <h3 className="font-orbitron text-xl font-bold mb-3 text-white">
+                      <h3 className="font-orbitron text-xl font-bold mb-3 text-black">
                         {project.title}
                       </h3>
 
-                      <p className="text-white/70 text-sm mb-4 leading-relaxed">
+                      <p className="text-black/70 text-sm mb-4 leading-relaxed">
                         {project.description}
                       </p>
 
                       <div className="mb-4">
-                        <h4 className="text-white font-semibold mb-2 text-sm">Key Features:</h4>
+                        <h4 className="text-black font-semibold mb-2 text-sm">Key Features:</h4>
                         <div className="flex flex-wrap gap-1">
                           {project.features.slice(0, 2).map((feature, idx) => (
                             <span
                               key={idx}
-                              className="text-xs bg-white/10 text-white/70 px-2 py-1 rounded"
+                              className="text-xs bg-black/10 text-black/70 px-2 py-1 rounded"
                             >
                               {feature}
                             </span>
@@ -196,7 +196,7 @@ const Portfolio = () => {
                       </div>
 
                       <div className="mb-4">
-                        <h4 className="text-white font-semibold mb-2 text-sm">Technologies:</h4>
+                        <h4 className="text-black font-semibold mb-2 text-sm">Technologies:</h4>
                         <div className="flex flex-wrap gap-1">
                           {project.technologies.map((tech, idx) => (
                             <span
@@ -215,7 +215,7 @@ const Portfolio = () => {
                         href={project.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="block w-full text-center py-2 bg-gradient-to-r from-cyber-purple/20 to-cyber-blue/20 border border-cyber-purple/30 rounded-lg text-white font-medium hover:bg-cyber-purple/30 transition-all duration-300"
+                        className="block w-full text-center py-2 bg-gradient-to-r from-cyber-purple/20 to-cyber-blue/20 border border-cyber-purple/30 rounded-lg text-black font-medium hover:bg-cyber-purple/30 transition-all duration-300"
                       >
                         View Project
                       </motion.a>
@@ -229,17 +229,17 @@ const Portfolio = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 px-4 bg-black/20">
+      <section className="py-20 px-4 bg-white/20">
         <div className="max-w-4xl mx-auto text-center">
           <motion.div
             initial={{ y: 30, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             viewport={{ once: true }}
           >
-            <h2 className="font-orbitron text-4xl md:text-5xl font-bold mb-6 text-white">
+            <h2 className="font-orbitron text-4xl md:text-5xl font-bold mb-6 text-black">
               Ready to Start Your Project?
             </h2>
-            <p className="text-xl text-white/70 mb-8 max-w-2xl mx-auto">
+            <p className="text-xl text-black/70 mb-8 max-w-2xl mx-auto">
               Let's discuss how we can bring your vision to life with our expertise and innovative approach.
             </p>
             <motion.button

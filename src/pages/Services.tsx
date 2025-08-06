@@ -8,6 +8,7 @@ const Services = () => {
 
   const services = [
     {
+      image: 'https://placehold.co/600x400/A020F0/white?text=Web+Dev',
       icon: <Code className="w-12 h-12" />,
       title: 'Web Development',
       category: 'Development',
@@ -24,6 +25,7 @@ const Services = () => {
       pricing: 'Starting from $2,000'
     },
     {
+      image: 'https://placehold.co/600x400/A020F0/white?text=School+Tech',
       icon: <GraduationCap className="w-12 h-12" />,
       title: 'School Tech Platforms',
       category: 'Education',
@@ -40,6 +42,7 @@ const Services = () => {
       pricing: 'Starting from $5,000'
     },
     {
+      image: 'https://placehold.co/600x400/A020F0/white?text=Creative+Media',
       icon: <Palette className="w-12 h-12" />,
       title: 'Creative Media',
       category: 'Design',
@@ -56,6 +59,7 @@ const Services = () => {
       pricing: 'Starting from $500'
     },
     {
+      image: 'https://placehold.co/600x400/A020F0/white?text=Photography',
       icon: <Camera className="w-12 h-12" />,
       title: 'Photography Services',
       category: 'Media',
@@ -72,6 +76,7 @@ const Services = () => {
       pricing: 'Starting from $200'
     },
     {
+      image: 'https://placehold.co/600x400/A020F0/white?text=Docs',
       icon: <FileText className="w-12 h-12" />,
       title: 'Document Solutions',
       category: 'Business',
@@ -88,6 +93,7 @@ const Services = () => {
       pricing: 'Starting from $100'
     },
     {
+      image: 'https://placehold.co/600x400/A020F0/white?text=Mobile+Dev',
       icon: <Smartphone className="w-12 h-12" />,
       title: 'Mobile Development',
       category: 'Development',
@@ -130,7 +136,7 @@ const Services = () => {
             <h1 className="font-orbitron text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-white via-cyber-purple to-cyber-blue bg-clip-text text-transparent">
               Our Services
             </h1>
-            <p className="text-xl md:text-2xl text-white/70 max-w-4xl mx-auto leading-relaxed">
+            <p className="text-xl md:text-2xl text-black/70 max-w-4xl mx-auto leading-relaxed">
               Comprehensive technology solutions designed to elevate your business and bring your digital vision to life
             </p>
           </motion.div>
@@ -150,7 +156,7 @@ const Services = () => {
                 className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${
                   activeCategory === category
                     ? 'bg-gradient-to-r from-cyber-purple to-cyber-blue text-white'
-                    : 'bg-white/10 text-white/70 hover:bg-white/20 hover:text-white'
+                    : 'bg-black/10 text-black/70 hover:bg-black/20 hover:text-black'
                 }`}
               >
                 {category}
@@ -175,26 +181,29 @@ const Services = () => {
                   transition={{ delay: index * 0.1 }}
                 >
                   <GlassCard 
-                    className="p-8 h-full cursor-pointer" 
+                    className="h-full cursor-pointer overflow-hidden"
                     onClick={() => setSelectedService(index)}
                   >
-                    <div className="text-cyber-purple mb-6">{service.icon}</div>
-                    <div className="mb-4">
-                      <span className="text-xs text-cyber-blue font-medium px-2 py-1 bg-cyber-blue/10 rounded-full">
-                        {service.category}
-                      </span>
+                    <img src={service.image} alt={service.title} className="w-full h-40 object-cover" />
+                    <div className="p-8">
+                      <div className="text-cyber-purple mb-6">{service.icon}</div>
+                      <div className="mb-4">
+                        <span className="text-xs text-cyber-blue font-medium px-2 py-1 bg-cyber-blue/10 rounded-full">
+                          {service.category}
+                        </span>
+                      </div>
+                      <h3 className="font-orbitron text-xl font-bold mb-4 text-black">
+                        {service.title}
+                      </h3>
+                      <p className="text-black/70 mb-6 leading-relaxed">
+                        {service.description}
+                      </p>
                     </div>
-                    <h3 className="font-orbitron text-xl font-bold mb-4 text-white">
-                      {service.title}
-                    </h3>
-                    <p className="text-white/70 mb-6 leading-relaxed">
-                      {service.description}
-                    </p>
                     <div className="flex items-center justify-between">
                       <span className="text-cyber-purple font-semibold">
                         {service.pricing}
                       </span>
-                      <span className="text-white/50 text-sm">
+                      <span className="text-black/50 text-sm">
                         Click for details →
                       </span>
                     </div>
@@ -213,7 +222,7 @@ const Services = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+            className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4"
             onClick={() => setSelectedService(null)}
           >
             <motion.div
@@ -230,7 +239,7 @@ const Services = () => {
                       {services[selectedService].icon}
                     </div>
                     <div>
-                      <h2 className="font-orbitron text-3xl font-bold text-white">
+                      <h2 className="font-orbitron text-3xl font-bold text-black">
                         {services[selectedService].title}
                       </h2>
                       <span className="text-cyber-blue">{services[selectedService].category}</span>
@@ -238,24 +247,24 @@ const Services = () => {
                   </div>
                   <button
                     onClick={() => setSelectedService(null)}
-                    className="p-2 rounded-full bg-white/10 hover:bg-white/20 transition-colors"
+                    className="p-2 rounded-full bg-black/10 hover:bg-black/20 transition-colors"
                   >
-                    <X className="w-6 h-6 text-white" />
+                    <X className="w-6 h-6 text-black" />
                   </button>
                 </div>
 
-                <p className="text-white/80 text-lg mb-8 leading-relaxed">
+                <p className="text-black/80 text-lg mb-8 leading-relaxed">
                   {services[selectedService].description}
                 </p>
 
                 <div className="grid md:grid-cols-2 gap-8">
                   <div>
-                    <h3 className="font-orbitron text-xl font-bold text-white mb-4">
+                    <h3 className="font-orbitron text-xl font-bold text-black mb-4">
                       Key Features
                     </h3>
                     <ul className="space-y-2">
                       {services[selectedService].features.map((feature, idx) => (
-                        <li key={idx} className="flex items-center space-x-2 text-white/70">
+                        <li key={idx} className="flex items-center space-x-2 text-black/70">
                           <div className="w-2 h-2 bg-cyber-purple rounded-full"></div>
                           <span>{feature}</span>
                         </li>
@@ -264,7 +273,7 @@ const Services = () => {
                   </div>
 
                   <div>
-                    <h3 className="font-orbitron text-xl font-bold text-white mb-4">
+                    <h3 className="font-orbitron text-xl font-bold text-black mb-4">
                       Technologies
                     </h3>
                     <div className="flex flex-wrap gap-2 mb-6">
@@ -279,11 +288,11 @@ const Services = () => {
                     </div>
 
                     <div className="bg-gradient-to-r from-cyber-purple/20 to-cyber-blue/20 p-4 rounded-lg">
-                      <h4 className="font-semibold text-white mb-2">Pricing</h4>
+                      <h4 className="font-semibold text-black mb-2">Pricing</h4>
                       <p className="text-2xl font-bold text-cyber-purple">
                         {services[selectedService].pricing}
                       </p>
-                      <p className="text-white/60 text-sm mt-1">
+                      <p className="text-black/60 text-sm mt-1">
                         Final pricing depends on project scope and requirements
                       </p>
                     </div>
@@ -301,7 +310,7 @@ const Services = () => {
                   <motion.button
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    className="px-8 py-3 border border-white/20 backdrop-blur-sm rounded-full text-white font-semibold hover:bg-white/5 transition-all duration-300"
+                    className="px-8 py-3 border border-black/20 backdrop-blur-sm rounded-full text-black font-semibold hover:bg-black/5 transition-all duration-300"
                   >
                     Learn More
                   </motion.button>

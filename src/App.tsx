@@ -15,7 +15,7 @@ import './index.css';
 function App() {
   return (
     <Router>
-      <div className="min-h-screen bg-cyber-gradient text-white overflow-x-hidden">
+      <div className="min-h-screen bg-light-900 text-black overflow-x-hidden">
         <CustomCursor />
         <ParticleBackground />
         <Navbar />

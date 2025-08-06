@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Menu, X, Zap } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
+import logo from '../assets/logo.png';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -42,12 +43,9 @@ const Navbar = () => {
             className="flex items-center space-x-2"
           >
             <Link to="/" className="flex items-center space-x-2">
-              <div className="relative">
-                <Zap className="h-8 w-8 text-cyber-purple animate-pulse-glow" />
-                <div className="absolute inset-0 bg-cyber-purple/20 blur-xl rounded-full"></div>
-              </div>
-              <span className="font-orbitron font-bold text-xl bg-gradient-to-r from-cyber-purple to-cyber-blue bg-clip-text text-transparent">
-                PARAGON
+              <img src={logo} alt="Paragon Logo" className="h-10 w-auto" />
+              <span className="font-orbitron font-bold text-xl text-black">
+                Paragon Tech
               </span>
             </Link>
           </motion.div>
@@ -61,7 +59,7 @@ const Navbar = () => {
                 className={`relative px-3 py-2 text-sm font-medium transition-all duration-300 ${
                   location.pathname === item.path
                     ? 'text-cyber-purple'
-                    : 'text-white/80 hover:text-white'
+                    : 'text-gray-600 hover:text-black'
                 }`}
               >
                 {item.name}
@@ -78,7 +76,7 @@ const Navbar = () => {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="glass-button px-6 py-2 rounded-full text-sm font-medium bg-gradient-to-r from-cyber-purple to-cyber-blue hover:shadow-lg hover:shadow-cyber-purple/25 transition-all duration-300"
+              className="glass-button px-6 py-2 rounded-full text-sm font-medium bg-gradient-to-r from-cyber-purple to-cyber-blue text-white hover:shadow-lg hover:shadow-cyber-purple/25 transition-all duration-300"
             >
               Get Quote
             </motion.button>
@@ -88,9 +86,9 @@ const Navbar = () => {
           <motion.button
             whileTap={{ scale: 0.95 }}
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden p-2 rounded-lg bg-white/10 backdrop-blur-sm"
+            className="md:hidden p-2 rounded-lg bg-black/10 backdrop-blur-sm"
           >
-            {isOpen ? <X size={20} /> : <Menu size={20} />}
+            {isOpen ? <X size={20} color="black" /> : <Menu size={20} color="black" />}
           </motion.button>
         </div>
       </div>
@@ -113,7 +111,7 @@ const Navbar = () => {
               className={`block px-3 py-2 text-lg font-medium transition-colors ${
                 location.pathname === item.path
                   ? 'text-cyber-purple'
-                  : 'text-white/80 hover:text-white'
+                  : 'text-gray-600 hover:text-black'
               }`}
             >
               {item.name}
