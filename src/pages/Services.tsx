@@ -8,6 +8,7 @@ const Services = () => {
 
   const services = [
     {
+      image: 'https://placehold.co/600x400/A020F0/white?text=Web+Dev',
       icon: <Code className="w-12 h-12" />,
       title: 'Web Development',
       category: 'Development',
@@ -24,6 +25,7 @@ const Services = () => {
       pricing: 'Starting from $2,000'
     },
     {
+      image: 'https://placehold.co/600x400/A020F0/white?text=School+Tech',
       icon: <GraduationCap className="w-12 h-12" />,
       title: 'School Tech Platforms',
       category: 'Education',
@@ -40,6 +42,7 @@ const Services = () => {
       pricing: 'Starting from $5,000'
     },
     {
+      image: 'https://placehold.co/600x400/A020F0/white?text=Creative+Media',
       icon: <Palette className="w-12 h-12" />,
       title: 'Creative Media',
       category: 'Design',
@@ -56,6 +59,7 @@ const Services = () => {
       pricing: 'Starting from $500'
     },
     {
+      image: 'https://placehold.co/600x400/A020F0/white?text=Photography',
       icon: <Camera className="w-12 h-12" />,
       title: 'Photography Services',
       category: 'Media',
@@ -72,6 +76,7 @@ const Services = () => {
       pricing: 'Starting from $200'
     },
     {
+      image: 'https://placehold.co/600x400/A020F0/white?text=Docs',
       icon: <FileText className="w-12 h-12" />,
       title: 'Document Solutions',
       category: 'Business',
@@ -88,6 +93,7 @@ const Services = () => {
       pricing: 'Starting from $100'
     },
     {
+      image: 'https://placehold.co/600x400/A020F0/white?text=Mobile+Dev',
       icon: <Smartphone className="w-12 h-12" />,
       title: 'Mobile Development',
       category: 'Development',
@@ -175,21 +181,24 @@ const Services = () => {
                   transition={{ delay: index * 0.1 }}
                 >
                   <GlassCard 
-                    className="p-8 h-full cursor-pointer" 
+                    className="h-full cursor-pointer overflow-hidden"
                     onClick={() => setSelectedService(index)}
                   >
-                    <div className="text-cyber-purple mb-6">{service.icon}</div>
-                    <div className="mb-4">
-                      <span className="text-xs text-cyber-blue font-medium px-2 py-1 bg-cyber-blue/10 rounded-full">
-                        {service.category}
-                      </span>
+                    <img src={service.image} alt={service.title} className="w-full h-40 object-cover" />
+                    <div className="p-8">
+                      <div className="text-cyber-purple mb-6">{service.icon}</div>
+                      <div className="mb-4">
+                        <span className="text-xs text-cyber-blue font-medium px-2 py-1 bg-cyber-blue/10 rounded-full">
+                          {service.category}
+                        </span>
+                      </div>
+                      <h3 className="font-orbitron text-xl font-bold mb-4 text-white">
+                        {service.title}
+                      </h3>
+                      <p className="text-white/70 mb-6 leading-relaxed">
+                        {service.description}
+                      </p>
                     </div>
-                    <h3 className="font-orbitron text-xl font-bold mb-4 text-white">
-                      {service.title}
-                    </h3>
-                    <p className="text-white/70 mb-6 leading-relaxed">
-                      {service.description}
-                    </p>
                     <div className="flex items-center justify-between">
                       <span className="text-cyber-purple font-semibold">
                         {service.pricing}

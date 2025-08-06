@@ -19,7 +19,7 @@ export default {
         cyber: {
           blue: '#00FFFF',
           green: '#00FFB3',
-          purple: '#8E44AD',
+          purple: '#A020F0',
         },
         dark: {
           900: '#0E0E12',
@@ -40,16 +40,16 @@ export default {
       },
       keyframes: {
         'pulse-glow': {
-          '0%': { boxShadow: '0 0 5px #8E44AD, 0 0 10px #8E44AD, 0 0 15px #8E44AD' },
-          '100%': { boxShadow: '0 0 10px #8E44AD, 0 0 20px #8E44AD, 0 0 30px #8E44AD' },
+          '0%': { boxShadow: '0 0 5px #A020F0, 0 0 10px #A020F0, 0 0 15px #A020F0' },
+          '100%': { boxShadow: '0 0 10px #A020F0, 0 0 20px #A020F0, 0 0 30px #A020F0' },
         },
         'float': {
           '0%, 100%': { transform: 'translateY(0px)' },
           '50%': { transform: 'translateY(-10px)' },
         },
         'glow': {
-          '0%': { textShadow: '0 0 5px #8E44AD' },
-          '100%': { textShadow: '0 0 20px #8E44AD, 0 0 30px #9B59B6' },
+          '0%': { textShadow: '0 0 5px #A020F0' },
+          '100%': { textShadow: '0 0 20px #A020F0, 0 0 30px #C471F5' },
         },
         'slide-up': {
           '0%': { transform: 'translateY(100px)', opacity: '0' },

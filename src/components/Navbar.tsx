@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Menu, X, Zap } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
+import logo from '../assets/logo.png';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -42,13 +43,7 @@ const Navbar = () => {
             className="flex items-center space-x-2"
           >
             <Link to="/" className="flex items-center space-x-2">
-              <div className="relative">
-                <Zap className="h-8 w-8 text-cyber-purple animate-pulse-glow" />
-                <div className="absolute inset-0 bg-cyber-purple/20 blur-xl rounded-full"></div>
-              </div>
-              <span className="font-orbitron font-bold text-xl bg-gradient-to-r from-cyber-purple to-cyber-blue bg-clip-text text-transparent">
-                PARAGON
-              </span>
+              <img src={logo} alt="Paragon Logo" className="h-10 w-auto" />
             </Link>
           </motion.div>
 
