@@ -56,7 +56,7 @@ const Navbar = () => {
                 className={`relative px-3 py-2 text-sm font-medium transition-all duration-300 ${
                   location.pathname === item.path
                     ? 'text-cyber-purple'
-                    : 'text-white/80 hover:text-white'
+                    : 'text-gray-600 hover:text-black'
                 }`}
               >
                 {item.name}
@@ -73,7 +73,7 @@ const Navbar = () => {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="glass-button px-6 py-2 rounded-full text-sm font-medium bg-gradient-to-r from-cyber-purple to-cyber-blue hover:shadow-lg hover:shadow-cyber-purple/25 transition-all duration-300"
+              className="glass-button px-6 py-2 rounded-full text-sm font-medium bg-gradient-to-r from-cyber-purple to-cyber-blue text-white hover:shadow-lg hover:shadow-cyber-purple/25 transition-all duration-300"
             >
               Get Quote
             </motion.button>
@@ -83,9 +83,9 @@ const Navbar = () => {
           <motion.button
             whileTap={{ scale: 0.95 }}
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden p-2 rounded-lg bg-white/10 backdrop-blur-sm"
+            className="md:hidden p-2 rounded-lg bg-black/10 backdrop-blur-sm"
           >
-            {isOpen ? <X size={20} /> : <Menu size={20} />}
+            {isOpen ? <X size={20} color="black" /> : <Menu size={20} color="black" />}
           </motion.button>
         </div>
       </div>
@@ -108,7 +108,7 @@ const Navbar = () => {
               className={`block px-3 py-2 text-lg font-medium transition-colors ${
                 location.pathname === item.path
                   ? 'text-cyber-purple'
-                  : 'text-white/80 hover:text-white'
+                  : 'text-gray-600 hover:text-black'
               }`}
             >
               {item.name}

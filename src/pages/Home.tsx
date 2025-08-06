@@ -49,10 +49,10 @@ const Home = () => {
             <h1 className="font-orbitron font-bold text-5xl md:text-7xl lg:text-8xl mb-6 bg-gradient-to-r from-white via-cyber-purple to-cyber-blue bg-clip-text text-transparent animate-glow">
               PARAGON
             </h1>
-            <h2 className="font-orbitron text-2xl md:text-4xl mb-6 text-white/90">
+            <h2 className="font-orbitron text-2xl md:text-4xl mb-6 text-black/90">
               TECH SOLUTIONS
             </h2>
-            <p className="text-xl md:text-2xl text-white/70 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl md:text-2xl text-black/70 max-w-3xl mx-auto leading-relaxed">
               Next-generation technology solutions that transform ideas into digital reality. 
               We craft exceptional web experiences and innovative platforms.
             </p>
@@ -79,7 +79,7 @@ const Home = () => {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-8 py-4 border border-white/20 backdrop-blur-sm rounded-full text-white font-semibold text-lg hover:bg-white/5 transition-all duration-300"
+                className="px-8 py-4 border border-black/20 backdrop-blur-sm rounded-full text-black font-semibold text-lg hover:bg-black/5 transition-all duration-300"
               >
                 View Portfolio
               </motion.button>
@@ -97,10 +97,10 @@ const Home = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="font-orbitron text-4xl md:text-5xl font-bold mb-6 text-white">
+            <h2 className="font-orbitron text-4xl md:text-5xl font-bold mb-6 text-black">
               Our <span className="bg-gradient-to-r from-cyber-purple to-cyber-blue bg-clip-text text-transparent">Services</span>
             </h2>
-            <p className="text-xl text-white/70 max-w-2xl mx-auto">
+            <p className="text-xl text-black/70 max-w-2xl mx-auto">
               We deliver cutting-edge solutions across multiple domains
             </p>
           </motion.div>
@@ -116,10 +116,10 @@ const Home = () => {
               >
                 <GlassCard className="p-8 h-full">
                   <div className="text-cyber-purple mb-4">{service.icon}</div>
-                  <h3 className="font-orbitron text-xl font-bold mb-4 text-white">
+                  <h3 className="font-orbitron text-xl font-bold mb-4 text-black">
                     {service.title}
                   </h3>
-                  <p className="text-white/70 leading-relaxed">
+                  <p className="text-black/70 leading-relaxed">
                     {service.description}
                   </p>
                 </GlassCard>
@@ -130,7 +130,7 @@ const Home = () => {
       </section>
 
       {/* Featured Projects */}
-      <section className="py-20 px-4 bg-black/20">
+      <section className="py-20 px-4 bg-white/20">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ y: 30, opacity: 0 }}
@@ -138,7 +138,7 @@ const Home = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="font-orbitron text-4xl md:text-5xl font-bold mb-6 text-white">
+            <h2 className="font-orbitron text-4xl md:text-5xl font-bold mb-6 text-black">
               Featured <span className="bg-gradient-to-r from-cyber-purple to-cyber-blue bg-clip-text text-transparent">Projects</span>
             </h2>
           </motion.div>
@@ -162,8 +162,8 @@ const Home = () => {
                       {project.category}
                     </span>
                   </div>
-                  <h3 className="font-semibold text-white mb-2">{project.name}</h3>
-                  <p className="text-white/60 text-sm">Visit live project →</p>
+                  <h3 className="font-semibold text-black mb-2">{project.name}</h3>
+                  <p className="text-black/60 text-sm">Visit live project →</p>
                 </GlassCard>
               </motion.a>
             ))}
@@ -179,10 +179,10 @@ const Home = () => {
             whileInView={{ y: 0, opacity: 1 }}
             viewport={{ once: true }}
           >
-            <h2 className="font-orbitron text-4xl md:text-5xl font-bold mb-6 text-white">
+            <h2 className="font-orbitron text-4xl md:text-5xl font-bold mb-6 text-black">
               Ready to Build the Future?
             </h2>
-            <p className="text-xl text-white/70 mb-8 max-w-2xl mx-auto">
+            <p className="text-xl text-black/70 mb-8 max-w-2xl mx-auto">
               Let's transform your vision into a digital masterpiece. Get started with a free consultation.
             </p>
             <Link to="/contact">

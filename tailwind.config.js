@@ -21,16 +21,16 @@ export default {
           green: '#00FFB3',
           purple: '#A020F0',
         },
-        dark: {
-          900: '#0E0E12',
-          800: '#1A1A2E',
-          700: '#16213E',
+        light: {
+          900: '#F5F5F5',
+          800: '#E5E5E5',
+          700: '#D4D4D4',
         }
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-        'cyber-gradient': 'linear-gradient(135deg, #0E0E12 0%, #1A1A2E 50%, #16213E 100%)',
+        'cyber-gradient': 'linear-gradient(135deg, #F5F5F5 0%, #E5E5E5 50%, #D4D4D4 100%)',
       },
       animation: {
         'pulse-glow': 'pulse-glow 2s ease-in-out infinite alternate',
