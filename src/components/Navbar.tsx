@@ -26,6 +26,35 @@ const Navbar = () => {
     { name: 'Blog', path: '/blog' },
   ];
 
+  const mobileMenuVariants = {
+    open: {
+      clipPath: 'inset(0% 0% 0% 0%)',
+      transition: {
+        type: 'spring',
+        stiffness: 40,
+        restDelta: 2,
+        staggerChildren: 0.1,
+      },
+    },
+    closed: {
+      clipPath: 'inset(0% 0% 100% 0%)',
+      transition: {
+        type: 'spring',
+        stiffness: 400,
+        damping: 40,
+      },
+    },
+  };
+
+  const navItemVariants = {
+    open: {
+      opacity: 1,
+      y: 0,
+      transition: { type: 'spring', stiffness: 300, damping: 24 },
+    },
+    closed: { opacity: 0, y: 20, transition: { duration: 0.2 } },
+  };
+
   return (
     <motion.nav
       initial={{ y: -100 }}
@@ -45,7 +74,7 @@ const Navbar = () => {
             <Link to="/" className="flex items-center space-x-2">
               <img src={logo} alt="Paragon Logo" className="h-10 w-auto" />
               <span className="font-orbitron font-bold text-xl text-black">
-                Paragon Tech
+                Paragonn Tech Solutions™
               </span>
             </Link>
           </motion.div>
@@ -95,27 +124,26 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       <motion.div
-        initial={{ opacity: 0, height: 0 }}
-        animate={{
-          opacity: isOpen ? 1 : 0,
-          height: isOpen ? 'auto' : 0,
-        }}
-        className="md:hidden bg-black/90 backdrop-blur-md border-t border-white/10"
+        initial={false}
+        animate={isOpen ? 'open' : 'closed'}
+        variants={mobileMenuVariants}
+        className="md:hidden bg-black/90 backdrop-blur-md border-t border-white/10 overflow-hidden"
       >
         <div className="px-4 py-6 space-y-4">
           {navItems.map((item) => (
-            <Link
-              key={item.name}
-              to={item.path}
-              onClick={() => setIsOpen(false)}
-              className={`block px-3 py-2 text-lg font-medium transition-colors ${
-                location.pathname === item.path
-                  ? 'text-cyber-purple'
-                  : 'text-gray-600 hover:text-black'
-              }`}
-            >
-              {item.name}
-            </Link>
+            <motion.div variants={navItemVariants} key={item.name}>
+              <Link
+                to={item.path}
+                onClick={() => setIsOpen(false)}
+                className={`block px-3 py-2 text-lg font-medium transition-colors ${
+                  location.pathname === item.path
+                    ? 'text-cyber-purple'
+                    : 'text-gray-600 hover:text-black'
+                }`}
+              >
+                {item.name}
+              </Link>
+            </motion.div>
           ))}
         </div>
       </motion.div>
