@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ExternalLink, Github, Star } from 'lucide-react';
+import { ExternalLink, Star } from 'lucide-react';
 import GlassCard from '../components/GlassCard';
 
 const Portfolio = () => {
@@ -140,87 +140,71 @@ const Portfolio = () => {
                   exit={{ opacity: 0, y: -20 }}
                   transition={{ delay: index * 0.1 }}
                 >
-                  <GlassCard className="overflow-hidden h-full">
-                    <div className="relative group">
-                      <img
-                        src={project.image}
-                        alt={project.title}
-                        className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <div className="absolute bottom-4 left-4 right-4">
-                          <div className="flex space-x-2">
-                            <motion.a
-                              whileHover={{ scale: 1.1 }}
-                              whileTap={{ scale: 0.9 }}
-                              href={project.url}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="p-2 bg-cyber-purple rounded-full text-white hover:bg-cyber-purple/80 transition-colors"
-                            >
-                              <ExternalLink size={18} />
-                            </motion.a>
+                  <motion.a
+                    href={project.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block"
+                    whileHover={{ y: -5 }}
+                  >
+                    <GlassCard className="overflow-hidden h-full">
+                      <div className="relative group">
+                        <img
+                          src={project.image}
+                          alt={project.title}
+                          className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-end p-4">
+                          <ExternalLink className="w-6 h-6 text-white" />
+                        </div>
+                      </div>
+
+                      <div className="p-6">
+                        <div className="flex items-center justify-between mb-3">
+                          <span className="text-xs text-cyber-blue font-medium px-2 py-1 bg-cyber-blue/10 rounded-full">
+                            {project.category}
+                          </span>
+                          <Star className="w-4 h-4 text-yellow-500" />
+                        </div>
+
+                        <h3 className="font-orbitron text-xl font-bold mb-3 text-black">
+                          {project.title}
+                        </h3>
+
+                        <p className="text-black/70 text-sm mb-4 leading-relaxed line-clamp-2">
+                          {project.description}
+                        </p>
+
+                        <div className="mb-4">
+                          <h4 className="text-black font-semibold mb-2 text-sm">Key Features:</h4>
+                          <div className="flex flex-wrap gap-1">
+                            {project.features.slice(0, 2).map((feature, idx) => (
+                              <span
+                                key={idx}
+                                className="text-xs bg-black/10 text-black/70 px-2 py-1 rounded"
+                              >
+                                {feature}
+                              </span>
+                            ))}
+                          </div>
+                        </div>
+
+                        <div>
+                          <h4 className="text-black font-semibold mb-2 text-sm">Technologies:</h4>
+                          <div className="flex flex-wrap gap-1">
+                            {project.technologies.map((tech, idx) => (
+                              <span
+                                key={idx}
+                                className="text-xs bg-cyber-purple/20 text-cyber-purple px-2 py-1 rounded"
+                              >
+                                {tech}
+                              </span>
+                            ))}
                           </div>
                         </div>
                       </div>
-                    </div>
-
-                    <div className="p-6">
-                      <div className="flex items-center justify-between mb-3">
-                        <span className="text-xs text-cyber-blue font-medium px-2 py-1 bg-cyber-blue/10 rounded-full">
-                          {project.category}
-                        </span>
-                        <Star className="w-4 h-4 text-yellow-500" />
-                      </div>
-
-                      <h3 className="font-orbitron text-xl font-bold mb-3 text-black">
-                        {project.title}
-                      </h3>
-
-                      <p className="text-black/70 text-sm mb-4 leading-relaxed">
-                        {project.description}
-                      </p>
-
-                      <div className="mb-4">
-                        <h4 className="text-black font-semibold mb-2 text-sm">Key Features:</h4>
-                        <div className="flex flex-wrap gap-1">
-                          {project.features.slice(0, 2).map((feature, idx) => (
-                            <span
-                              key={idx}
-                              className="text-xs bg-black/10 text-black/70 px-2 py-1 rounded"
-                            >
-                              {feature}
-                            </span>
-                          ))}
-                        </div>
-                      </div>
-
-                      <div className="mb-4">
-                        <h4 className="text-black font-semibold mb-2 text-sm">Technologies:</h4>
-                        <div className="flex flex-wrap gap-1">
-                          {project.technologies.map((tech, idx) => (
-                            <span
-                              key={idx}
-                              className="text-xs bg-cyber-purple/20 text-cyber-purple px-2 py-1 rounded"
-                            >
-                              {tech}
-                            </span>
-                          ))}
-                        </div>
-                      </div>
-
-                      <motion.a
-                        whileHover={{ scale: 1.02 }}
-                        whileTap={{ scale: 0.98 }}
-                        href={project.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="block w-full text-center py-2 bg-gradient-to-r from-cyber-purple/20 to-cyber-blue/20 border border-cyber-purple/30 rounded-lg text-black font-medium hover:bg-cyber-purple/30 transition-all duration-300"
-                      >
-                        View Project
-                      </motion.a>
-                    </div>
-                  </GlassCard>
+                    </GlassCard>
+                  </motion.a>
                 </motion.div>
               ))}
             </AnimatePresence>
