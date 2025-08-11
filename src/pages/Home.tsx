@@ -1,203 +1,152 @@
 import React from 'react';
-import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Zap, Shield, Rocket, Star } from 'lucide-react';
-import GlassCard from '../components/GlassCard';
+import { Box, Button, Card, CardContent, Container, Grid, Typography, Toolbar, CardActions } from '@mui/material';
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import FlashOnIcon from '@mui/icons-material/FlashOn';
+import SecurityIcon from '@mui/icons-material/Security';
+import RocketLaunchIcon from '@mui/icons-material/RocketLaunch';
+import StarIcon from '@mui/icons-material/Star';
+
+const services = [
+  {
+    icon: <FlashOnIcon fontSize="large" color="primary" />,
+    title: 'Web Development',
+    description: 'Modern, responsive websites built with cutting-edge technologies',
+  },
+  {
+    icon: <SecurityIcon fontSize="large" color="primary" />,
+    title: 'School Platforms',
+    description: 'Complete educational management systems and learning platforms',
+  },
+  {
+    icon: <RocketLaunchIcon fontSize="large" color="primary" />,
+    title: 'Creative Media',
+    description: 'Branding, photography, and multimedia content creation',
+  },
+];
+
+const projects = [
+  { name: 'ExamsideMan', url: 'https://examsidemann.org', category: 'Education' },
+  { name: 'Mwenezi Pay Fees', url: 'https://mwenezipayfees.netlify.app', category: 'Fintech' },
+  { name: 'Prominent Carpentry', url: 'https://prominentcarpentry.netlify.org', category: 'Business' },
+  { name: 'ScanBiz App', url: 'https://scanbizapp.netlify.app', category: 'Tech' },
+];
 
 const Home = () => {
-  const services = [
-    {
-      icon: <Zap className="w-8 h-8" />,
-      title: 'Web Development',
-      description: 'Modern, responsive websites built with cutting-edge technologies'
-    },
-    {
-      icon: <Shield className="w-8 h-8" />,
-      title: 'School Platforms',
-      description: 'Complete educational management systems and learning platforms'
-    },
-    {
-      icon: <Rocket className="w-8 h-8" />,
-      title: 'Creative Media',
-      description: 'Branding, photography, and multimedia content creation'
-    }
-  ];
-
-  const projects = [
-    { name: 'ExamsideMan', url: 'https://examsidemann.org', category: 'Education' },
-    { name: 'Mwenezi Pay Fees', url: 'https://mwenezipayfees.netlify.app', category: 'Fintech' },
-    { name: 'Prominent Carpentry', url: 'https://prominentcarpentry.netlify.org', category: 'Business' },
-    { name: 'ScanBiz App', url: 'https://scanbizapp.netlify.app', category: 'Tech' },
-  ];
-
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      className="relative z-10"
-    >
-      {/* Hero Section */}
-      <section className="min-h-screen flex items-center justify-center pt-20 px-4">
-        <div className="max-w-6xl mx-auto text-center">
-          <motion.div
-            initial={{ y: 50, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ delay: 0.2 }}
-            className="mb-8"
-          >
-            <h1 className="font-orbitron font-bold text-5xl md:text-7xl lg:text-8xl mb-6 bg-gradient-to-r from-white via-cyber-purple to-cyber-blue bg-clip-text text-transparent animate-glow">
-              PARAGON
-            </h1>
-            <h2 className="font-orbitron text-2xl md:text-4xl mb-6 text-black/90">
-              TECH SOLUTIONS
-            </h2>
-            <p className="text-xl md:text-2xl text-black/70 max-w-3xl mx-auto leading-relaxed">
-              Next-generation technology solutions that transform ideas into digital reality. 
-              We craft exceptional web experiences and innovative platforms.
-            </p>
-          </motion.div>
+    <Box>
+      {/* Add Toolbar to offset content due to fixed AppBar */}
+      <Toolbar />
 
-          <motion.div
-            initial={{ y: 30, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ delay: 0.4 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center"
-          >
-            <Link to="/services">
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="group px-8 py-4 bg-gradient-to-r from-cyber-purple to-cyber-blue rounded-full text-white font-semibold text-lg flex items-center space-x-2 hover:shadow-lg hover:shadow-cyber-purple/30 transition-all duration-300"
-              >
-                <span>Explore Services</span>
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </motion.button>
-            </Link>
-            
-            <Link to="/portfolio">
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="px-8 py-4 border border-black/20 backdrop-blur-sm rounded-full text-black font-semibold text-lg hover:bg-black/5 transition-all duration-300"
-              >
-                View Portfolio
-              </motion.button>
-            </Link>
-          </motion.div>
-        </div>
-      </section>
+      {/* Hero Section */}
+      <Box sx={{
+        minHeight: 'calc(100vh - 64px)', // 64px is the standard AppBar height
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        textAlign: 'center',
+        py: 8
+      }}>
+        <Container maxWidth="md">
+          <Typography variant="h1" component="h1" gutterBottom sx={{ fontWeight: 'bold' }}>
+            PARAGON
+          </Typography>
+          <Typography variant="h3" component="h2" gutterBottom>
+            TECH SOLUTIONS
+          </Typography>
+          <Typography variant="h5" color="text.secondary" paragraph>
+            Next-generation technology solutions that transform ideas into digital reality. We craft exceptional web experiences and innovative platforms.
+          </Typography>
+          <Box sx={{ mt: 4, display: 'flex', gap: 2, justifyContent: 'center' }}>
+            <Button component={Link} to="/services" variant="contained" size="large" endIcon={<ArrowForwardIcon />}>
+              Explore Services
+            </Button>
+            <Button component={Link} to="/portfolio" variant="outlined" size="large">
+              View Portfolio
+            </Button>
+          </Box>
+        </Container>
+      </Box>
 
       {/* Services Preview */}
-      <section className="py-20 px-4">
-        <div className="max-w-6xl mx-auto">
-          <motion.div
-            initial={{ y: 30, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="font-orbitron text-4xl md:text-5xl font-bold mb-6 text-black">
-              Our <span className="bg-gradient-to-r from-cyber-purple to-cyber-blue bg-clip-text text-transparent">Services</span>
-            </h2>
-            <p className="text-xl text-black/70 max-w-2xl mx-auto">
-              We deliver cutting-edge solutions across multiple domains
-            </p>
-          </motion.div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {services.map((service, index) => (
-              <motion.div
-                key={service.title}
-                initial={{ y: 50, opacity: 0 }}
-                whileInView={{ y: 0, opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-              >
-                <GlassCard className="p-8 h-full">
-                  <div className="text-cyber-purple mb-4">{service.icon}</div>
-                  <h3 className="font-orbitron text-xl font-bold mb-4 text-black">
-                    {service.title}
-                  </h3>
-                  <p className="text-black/70 leading-relaxed">
-                    {service.description}
-                  </p>
-                </GlassCard>
-              </motion.div>
+      <Box sx={{ py: 8, backgroundColor: 'background.paper' }}>
+        <Container maxWidth="lg">
+          <Typography variant="h2" component="h2" gutterBottom align="center" sx={{ fontWeight: 'bold' }}>
+            Our Services
+          </Typography>
+          <Typography variant="h5" align="center" color="text.secondary" paragraph>
+            We deliver cutting-edge solutions across multiple domains.
+          </Typography>
+          <Grid container spacing={4} sx={{ mt: 4 }}>
+            {services.map((service) => (
+              <Grid item key={service.title} xs={12} sm={6} md={4}>
+                <Card sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
+                  <CardContent sx={{ flexGrow: 1 }}>
+                    <Box sx={{ mb: 2 }}>{service.icon}</Box>
+                    <Typography variant="h5" component="h3" gutterBottom sx={{ fontWeight: 'bold' }}>
+                      {service.title}
+                    </Typography>
+                    <Typography color="text.secondary">
+                      {service.description}
+                    </Typography>
+                  </CardContent>
+                </Card>
+              </Grid>
             ))}
-          </div>
-        </div>
-      </section>
+          </Grid>
+        </Container>
+      </Box>
 
       {/* Featured Projects */}
-      <section className="py-20 px-4 bg-white/20">
-        <div className="max-w-6xl mx-auto">
-          <motion.div
-            initial={{ y: 30, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="font-orbitron text-4xl md:text-5xl font-bold mb-6 text-black">
-              Featured <span className="bg-gradient-to-r from-cyber-purple to-cyber-blue bg-clip-text text-transparent">Projects</span>
-            </h2>
-          </motion.div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {projects.map((project, index) => (
-              <motion.a
-                key={project.name}
-                href={project.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                initial={{ y: 30, opacity: 0 }}
-                whileInView={{ y: 0, opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-              >
-                <GlassCard className="p-6 h-full">
-                  <div className="flex items-center justify-between mb-4">
-                    <Star className="w-5 h-5 text-cyber-blue" />
-                    <span className="text-xs text-cyber-purple font-medium px-2 py-1 bg-cyber-purple/10 rounded-full">
-                      {project.category}
-                    </span>
-                  </div>
-                  <h3 className="font-semibold text-black mb-2">{project.name}</h3>
-                  <p className="text-black/60 text-sm">Visit live project →</p>
-                </GlassCard>
-              </motion.a>
+      <Box sx={{ py: 8 }}>
+        <Container maxWidth="lg">
+          <Typography variant="h2" component="h2" gutterBottom align="center" sx={{ fontWeight: 'bold' }}>
+            Featured Projects
+          </Typography>
+          <Grid container spacing={4} sx={{ mt: 4 }}>
+            {projects.map((project) => (
+              <Grid item key={project.name} xs={12} sm={6} md={3}>
+                <Card sx={{ height: '100%' }}>
+                  <CardContent>
+                    <Box sx={{ display: 'flex', justifyContent: 'space-between', mb: 2 }}>
+                      <StarIcon color="primary" />
+                       <Typography sx={{  fontSize: '0.8rem',  borderRadius: '16px', padding: '0.25em 0.75em' }}>
+                        {project.category}
+                      </Typography>
+                    </Box>
+                    <Typography variant="h6" component="h3" gutterBottom>
+                      {project.name}
+                    </Typography>
+                  </CardContent>
+                  <CardActions>
+                    <Button component="a" href={project.url} target="_blank" rel="noopener noreferrer" size="small">
+                      Visit Project
+                    </Button>
+                  </CardActions>
+                </Card>
+              </Grid>
             ))}
-          </div>
-        </div>
-      </section>
+          </Grid>
+        </Container>
+      </Box>
 
       {/* CTA Section */}
-      <section className="py-20 px-4">
-        <div className="max-w-4xl mx-auto text-center">
-          <motion.div
-            initial={{ y: 30, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="font-orbitron text-4xl md:text-5xl font-bold mb-6 text-black">
-              Ready to Build the Future?
-            </h2>
-            <p className="text-xl text-black/70 mb-8 max-w-2xl mx-auto">
-              Let's transform your vision into a digital masterpiece. Get started with a free consultation.
-            </p>
-            <Link to="/contact">
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="px-12 py-4 bg-gradient-to-r from-cyber-purple to-cyber-blue rounded-full text-white font-bold text-lg hover:shadow-lg hover:shadow-cyber-purple/30 transition-all duration-300"
-              >
-                Get Started Today
-              </motion.button>
-            </Link>
-          </motion.div>
-        </div>
-      </section>
-    </motion.div>
+      <Box sx={{ py: 8, backgroundColor: 'background.paper' }}>
+        <Container maxWidth="md">
+          <Typography variant="h2" component="h2" gutterBottom align="center" sx={{ fontWeight: 'bold' }}>
+            Ready to Build the Future?
+          </Typography>
+          <Typography variant="h5" align="center" color="text.secondary" paragraph>
+            Let's transform your vision into a digital masterpiece. Get started with a free consultation.
+          </Typography>
+          <Box sx={{ mt: 4, display: 'flex', justifyContent: 'center' }}>
+            <Button component={Link} to="/contact" variant="contained" size="large">
+              Get Started Today
+            </Button>
+          </Box>
+        </Container>
+      </Box>
+    </Box>
   );
 };
 
